@@ -1,0 +1,1318 @@
+﻿
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090a0c">
+<title>VELOCITY MOTORS | Luxury Collection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold:#d5ae68;
+  --gold2:#f0d49b;
+  --dark:#090a0c;
+  --card:#141619;
+  --muted:#999;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:var(--dark);
+  color:#f7f5f0;
+  font-family:'Cairo',sans-serif;
+  overflow-x:hidden;
+}
+
+button,select { font-family:inherit; }
+a { text-decoration:none;color:inherit; }
+
+.container {
+  width:min(1200px,92%);
+  margin:auto;
+}
+
+/* NAVBAR */
+
+header {
+  position:fixed;
+  top:0;
+  right:0;
+  width:100%;
+  z-index:100;
+  background:rgba(9,10,12,.9);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid #d5ae6825;
+}
+
+.navbar {
+  height:75px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo {
+  font-size:23px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span { color:var(--gold); }
+
+.nav-links {
+  display:flex;
+  gap:25px;
+}
+
+.nav-links a {
+  font-size:13px;
+  color:#ccc;
+  transition:.3s;
+}
+
+.nav-links a:hover { color:var(--gold); }
+
+.nav-btn {
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:9px 18px;
+  font-size:12px;
+  border-radius:4px;
+}
+
+/* HERO */
+
+.hero {
+  min-height:740px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  background:
+    linear-gradient(90deg,rgba(9,10,12,.96),rgba(9,10,12,.35)),
+    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=90')
+    center/cover;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,var(--dark),transparent 40%);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  max-width:650px;
+  padding-top:90px;
+  animation:heroIn 1s ease both;
+}
+
+@keyframes heroIn {
+  from { opacity:0;transform:translateY(35px); }
+  to { opacity:1;transform:translateY(0); }
+}
+
+.eyebrow {
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:3px;
+}
+
+.hero h1 {
+  font-size:clamp(42px,7vw,78px);
+  line-height:1.35;
+  font-weight:900;
+  margin:18px 0;
+}
+
+.hero h1 span { color:var(--gold); }
+
+.hero p {
+  color:#c5c5c5;
+  line-height:2;
+  max-width:490px;
+  font-size:15px;
+}
+
+.hero-actions {
+  display:flex;
+  gap:13px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 25px;
+  border-radius:4px;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn-gold {
+  background:var(--gold);
+  color:#111;
+}
+
+.btn-gold:hover {
+  background:var(--gold2);
+  transform:translateY(-3px);
+}
+
+.btn-outline {
+  border:1px solid #ffffff66;
+  color:white;
+}
+
+.btn-outline:hover {
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+/* STATS */
+
+.stats {
+  padding:30px 0;
+  background:#101215;
+  border-block:1px solid #25282b;
+}
+
+.stats-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.stat { text-align:center; }
+
+.stat strong {
+  display:block;
+  font-size:32px;
+  color:var(--gold);
+}
+
+.stat span {
+  color:#999;
+  font-size:12px;
+}
+
+/* SECTIONS */
+
+section { padding:95px 0; }
+
+.section-head {
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-head small {
+  color:var(--gold);
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+.section-head h2 {
+  font-size:clamp(27px,4vw,42px);
+  margin:12px 0;
+}
+
+.section-head p {
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* FILTERS */
+
+.filters {
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:35px;
+  flex-wrap:wrap;
+}
+
+.filters select {
+  background:#15181b;
+  border:1px solid #333;
+  color:white;
+  padding:12px 18px;
+  min-width:175px;
+  border-radius:4px;
+  outline:none;
+}
+
+/* CARDS */
+
+.cars-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  perspective:1200px;
+}
+
+.car-card {
+  --tilt-x:0deg;
+  --tilt-y:0deg;
+
+  background:var(--card);
+  border:1px solid #292c2f;
+  border-radius:9px;
+  overflow:hidden;
+  position:relative;
+
+  transform-style:preserve-3d;
+  transform:
+    perspective(900px)
+    rotateX(var(--tilt-x))
+    rotateY(var(--tilt-y));
+
+  transition:
+    transform .22s ease-out,
+    border-color .35s,
+    box-shadow .35s;
+
+  will-change:transform;
+  animation:cardFloat 5s ease-in-out infinite;
+}
+
+.car-card:nth-child(3n+2) {
+  animation-delay:1s;
+}
+
+.car-card:nth-child(3n) {
+  animation-delay:2s;
+}
+
+@keyframes cardFloat {
+  0%,100% { translate:0 0; }
+  50% { translate:0 -6px; }
+}
+
+.car-card:hover {
+  border-color:var(--gold);
+  box-shadow:0 20px 50px #d5ae6820;
+}
+
+.car-image {
+  height:220px;
+  position:relative;
+  overflow:hidden;
+  background:#202326;
+}
+
+.car-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .7s;
+}
+
+.car-card:hover .car-image img {
+  transform:scale(1.08);
+}
+
+.car-label {
+  position:absolute;
+  top:14px;
+  right:14px;
+  background:#090a0ce8;
+  color:var(--gold);
+  padding:6px 12px;
+  font-size:11px;
+  border-radius:3px;
+}
+
+.car-info { padding:20px; }
+
+.car-info h3 {
+  font-size:19px;
+  margin-bottom:4px;
+}
+
+.car-brand {
+  color:#888;
+  font-size:12px;
+}
+
+.car-specs {
+  display:flex;
+  justify-content:space-between;
+  border-block:1px solid #292c2f;
+  padding:13px 0;
+  margin:18px 0;
+  color:#aaa;
+  font-size:12px;
+}
+
+.car-bottom {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+}
+
+.car-price {
+  color:var(--gold);
+  font-size:16px;
+  font-weight:800;
+}
+
+.details-btn {
+  background:transparent;
+  border:1px solid #555;
+  color:white;
+  padding:8px 13px;
+  border-radius:3px;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.details-btn:hover {
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+.no-results {
+  grid-column:1/-1;
+  text-align:center;
+  color:#aaa;
+  padding:30px;
+}
+
+/* MOTION BUTTON */
+
+.motion-btn {
+  position:fixed;
+  left:18px;
+  bottom:90px;
+  z-index:95;
+  background:#17191c;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  border-radius:30px;
+  padding:12px 17px;
+  font-size:11px;
+  box-shadow:0 5px 25px #0008;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.motion-btn.active {
+  background:#263528;
+  border-color:#75c58a;
+  color:#a4efb6;
+}
+
+.motion-btn:active { scale:.96; }
+
+/* EXPERIENCE */
+
+.experience { background:#101215; }
+
+.experience-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.experience-image {
+  position:relative;
+}
+
+.experience-image img {
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:8px;
+  position:relative;
+  z-index:1;
+}
+
+.experience-image::after {
+  content:"";
+  position:absolute;
+  inset:15px -15px -15px 15px;
+  border:1px solid var(--gold);
+  border-radius:8px;
+}
+
+.experience-content small { color:var(--gold); }
+
+.experience-content h2 {
+  font-size:36px;
+  line-height:1.5;
+  margin:18px 0;
+}
+
+.experience-content p {
+  color:#aaa;
+  line-height:2.1;
+  font-size:14px;
+}
+
+.features {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  margin-top:25px;
+}
+
+.feature {
+  border-right:2px solid var(--gold);
+  padding-right:12px;
+}
+
+.feature strong {
+  display:block;
+  font-size:13px;
+}
+
+.feature span {
+  color:#888;
+  font-size:11px;
+}
+
+/* GALLERY */
+
+.showroom-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.show-item {
+  height:260px;
+  position:relative;
+  overflow:hidden;
+  border-radius:6px;
+}
+
+.show-item img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.7s;
+}
+
+.show-item:hover img { transform:scale(1.08); }
+
+.show-caption {
+  position:absolute;
+  bottom:0;
+  right:0;
+  width:100%;
+  padding:35px 20px 18px;
+  background:linear-gradient(transparent,#000e);
+  font-size:17px;
+  font-weight:800;
+}
+
+/* CONTACT */
+
+.contact-section {
+  background:
+    linear-gradient(#090a0ce8,#090a0cf2),
+    url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+}
+
+.contact-box {
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+}
+
+.contact-box h2 {
+  font-size:clamp(30px,5vw,48px);
+  margin:15px 0;
+}
+
+.contact-box p {
+  color:#aaa;
+  line-height:2;
+  margin-bottom:25px;
+}
+
+/* FOOTER */
+
+footer {
+  background:#070809;
+  border-top:1px solid #25282b;
+  padding:30px 0;
+}
+
+.footer-content {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.footer-content p {
+  color:#777;
+  font-size:11px;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#20c86a;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  z-index:90;
+  box-shadow:0 5px 25px #20c86a55;
+}
+
+/* MODAL */
+
+.modal {
+  position:fixed;
+  inset:0;
+  background:#000d;
+  z-index:200;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  backdrop-filter:blur(8px);
+}
+
+.modal.open { display:flex; }
+
+.modal-box {
+  width:min(750px,100%);
+  max-height:90vh;
+  overflow-y:auto;
+  background:#15181b;
+  border:1px solid #484034;
+  border-radius:8px;
+  position:relative;
+  animation:modalUp .3s ease;
+}
+
+@keyframes modalUp {
+  from { transform:translateY(25px);opacity:0; }
+  to { transform:translateY(0);opacity:1; }
+}
+
+.modal-image {
+  width:100%;
+  height:280px;
+  object-fit:cover;
+}
+
+.modal-content { padding:25px; }
+
+.modal-content h2 {
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.modal-content p {
+  color:#bbb;
+  line-height:2;
+  font-size:14px;
+}
+
+.modal-actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.close-modal {
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:2;
+  background:white;
+  color:#111;
+  border:0;
+  border-radius:50%;
+  width:38px;
+  height:38px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* REVEAL */
+
+.reveal {
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* REDUCED MOTION */
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+
+  .reveal {
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:900px) {
+  .cars-grid { grid-template-columns:repeat(2,1fr); }
+}
+
+@media(max-width:650px) {
+  .navbar { height:65px; }
+  .logo { font-size:18px; }
+  .nav-links { gap:10px; }
+  .nav-links a { font-size:10px; }
+  .nav-btn { display:none; }
+
+  .hero {
+    min-height:650px;
+    background-position:57% center;
+  }
+
+  .hero p { font-size:13px; }
+
+  section { padding:70px 0; }
+
+  .stats-grid {
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+  }
+
+  .stat strong { font-size:26px; }
+
+  .cars-grid {
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .car-image { height:230px; }
+
+  .experience-grid {
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .experience-image img { height:300px; }
+  .experience-content h2 { font-size:29px; }
+
+  .showroom-grid { grid-template-columns:1fr; }
+  .show-item { height:225px; }
+
+  .footer-content {
+    justify-content:center;
+    text-align:center;
+  }
+
+  .modal-image { height:210px; }
+
+  .motion-btn {
+    bottom:87px;
+    font-size:10px;
+    padding:10px 13px;
+  }
+}
+
+@media(hover:none) {
+  .car-card:hover {
+    box-shadow:none;
+  }
+
+  .car-card:active {
+    border-color:var(--gold);
+  }
+
+  .car-card:active .car-image img {
+    transform:scale(1.06);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#" class="logo">VELOCITY <span>MOTORS</span></a>
+    <nav class="nav-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#cars">السيارات</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <a href="#cars" class="nav-btn">اكتشف السيارات</a>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow">THE ART OF DRIVING</div>
+      <h1>قيادة مختلفة.<br><span>شغف بلا حدود.</span></h1>
+      <p>
+        اكتشف عالم السيارات الفاخرة والأداء الاستثنائي.
+        اختيارات مميزة لعشاق التميز والقوة والأناقة.
+      </p>
+      <div class="hero-actions">
+        <a href="#cars" class="btn btn-gold">استكشف مجموعتنا</a>
+        <a href="#about" class="btn btn-outline">اكتشف عالمنا</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><strong>250+</strong><span>سيارة مميزة</span></div>
+    <div class="stat"><strong>15+</strong><span>عامًا من الخبرة</span></div>
+    <div class="stat"><strong>98%</strong><span>رضا العملاء</span></div>
+    <div class="stat"><strong>24/7</strong><span>خدمة العملاء</span></div>
+  </div>
+</div>
+
+<section id="cars">
+  <div class="container">
+    <div class="section-head reveal">
+      <small>OUR COLLECTION</small>
+      <h2>اكتشف مجموعتنا المميزة</h2>
+      <p>اختيارات استثنائية تجمع بين القوة والفخامة والتصميم.</p>
+    </div>
+
+    <div class="filters reveal">
+      <select id="brandFilter">
+        <option value="all">جميع الماركات</option>
+        <option value="Porsche">Porsche</option>
+        <option value="Mercedes">Mercedes</option>
+        <option value="BMW">BMW</option>
+        <option value="Ferrari">Ferrari</option>
+        <option value="Lamborghini">Lamborghini</option>
+      </select>
+
+      <select id="priceFilter">
+        <option value="all">جميع الأسعار</option>
+        <option value="under5">أقل من 5 مليون</option>
+        <option value="5to10">من 5 إلى 10 مليون</option>
+        <option value="over10">أكثر من 10 مليون</option>
+      </select>
+    </div>
+
+    <div class="cars-grid" id="carsGrid"></div>
+  </div>
+</section>
+
+<section class="experience" id="about">
+  <div class="container experience-grid">
+    <div class="experience-image reveal">
+      <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=85" alt="Luxury car">
+    </div>
+
+    <div class="experience-content reveal">
+      <small>WHO WE ARE</small>
+      <h2>أكثر من مجرد سيارة... إنها تجربة.</h2>
+      <p>
+        في VELOCITY MOTORS نؤمن أن السيارة ليست مجرد وسيلة
+        انتقال، بل تعبير عن الشخصية والطموح والشغف.
+        نقدم مجموعة مختارة بعناية من السيارات المميزة
+        لنمنحك تجربة شراء تليق بتطلعاتك.
+      </p>
+
+      <div class="features">
+        <div class="feature"><strong>اختيارات مميزة</strong><span>سيارات مختارة بعناية</span></div>
+        <div class="feature"><strong>جودة وموثوقية</strong><span>اهتمام بأدق التفاصيل</span></div>
+        <div class="feature"><strong>خدمة احترافية</strong><span>تجربة عملاء مميزة</span></div>
+        <div class="feature"><strong>دعم مستمر</strong><span>نحن معك في كل خطوة</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <small>THE WORLD OF LUXURY</small>
+      <h2>عالم من التفاصيل</h2>
+      <p>الفخامة تبدأ من التصميم وتنتهي عند تجربة القيادة.</p>
+    </div>
+
+    <div class="showroom-grid">
+      <div class="show-item reveal">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Porsche">
+        <div class="show-caption">الأداء الرياضي</div>
+      </div>
+      <div class="show-item reveal">
+        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=85" alt="Mercedes">
+        <div class="show-caption">الفخامة الألمانية</div>
+      </div>
+      <div class="show-item reveal">
+        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=85" alt="BMW">
+        <div class="show-caption">قوة بلا تنازلات</div>
+      </div>
+      <div class="show-item reveal">
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1000&q=85" alt="Luxury">
+        <div class="show-caption">تصميم يخطف الأنظار</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <small class="eyebrow">LET'S TALK</small>
+      <h2>سيارتك القادمة تبدأ من هنا.</h2>
+      <p>هل تبحث عن سيارة أحلامك؟ تواصل معنا ودعنا نساعدك في اختيار السيارة المناسبة.</p>
+      <a href="#" id="contactWhatsapp" class="btn btn-gold">تواصل معنا عبر واتساب</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-content">
+    <a href="#" class="logo">VELOCITY <span>MOTORS</span></a>
+    <p>© 2026 VELOCITY MOTORS - جميع الحقوق محفوظة</p>
+    <p>الفخامة أسلوب حياة.</p>
+  </div>
+</footer>
+
+<button id="motionBtn" class="motion-btn" type="button">
+  ✦ تفعيل الحركة ثلاثية الأبعاد
+</button>
+
+<a href="#" id="floatingWhatsapp" class="whatsapp" aria-label="WhatsApp">☎</a>
+
+<div class="modal" id="carModal">
+  <div class="modal-box">
+    <button class="close-modal" id="closeModal" type="button">×</button>
+    <img src="" id="modalImage" class="modal-image" alt="">
+    <div class="modal-content">
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <div class="modal-actions">
+        <a href="#" id="modalWhatsapp" class="btn btn-gold">استفسر عن السيارة</a>
+        <button class="btn btn-outline" id="modalCloseButton" type="button">إغلاق</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* بيانات المعرض */
+
+const WHATSAPP_NUMBER = "201001234567";
+
+const cars = [
+  {
+    name:"Porsche 911 Carrera",
+    brand:"Porsche",
+    year:2024,
+    engine:"3.0L Turbo",
+    price:8.5,
+    displayPrice:"8,500,000 جنيه",
+    label:"الأكثر طلبًا",
+    image:"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85",
+    description:"بورش 911 كاريرا، مزيج استثنائي من الأداء الرياضي والهندسة الألمانية والتصميم الأيقوني."
+  },
+  {
+    name:"Mercedes AMG GT",
+    brand:"Mercedes",
+    year:2023,
+    engine:"4.0L V8",
+    price:12.5,
+    displayPrice:"12,500,000 جنيه",
+    label:"أداء رياضي",
+    image:"https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=85",
+    description:"مرسيدس AMG GT، سيارة رياضية تجمع بين القوة المذهلة والفخامة والتكنولوجيا."
+  },
+  {
+    name:"BMW M4 Competition",
+    brand:"BMW",
+    year:2024,
+    engine:"3.0L Twin Turbo",
+    price:7.2,
+    displayPrice:"7,200,000 جنيه",
+    label:"اختيار مميز",
+    image:"https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1000&q=85",
+    description:"BMW M4 Competition، تجربة قيادة رياضية مع أداء قوي وتصميم هجومي."
+  },
+  {
+    name:"Ferrari F8 Tributo",
+    brand:"Ferrari",
+    year:2022,
+    engine:"3.9L V8",
+    price:19,
+    displayPrice:"19,000,000 جنيه",
+    label:"سيارة استثنائية",
+    image:"https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=1000&q=85",
+    description:"فيراري F8 Tributo، تحفة إيطالية تجسد السرعة والدقة والتصميم الرياضي."
+  },
+  {
+    name:"Lamborghini Huracán",
+    brand:"Lamborghini",
+    year:2023,
+    engine:"5.2L V10",
+    price:22,
+    displayPrice:"22,000,000 جنيه",
+    label:"قوة إيطالية",
+    image:"https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1000&q=85",
+    description:"لامبورجيني هوراكان، تصميم جريء ومحرك قوي وتجربة قيادة لا تُنسى."
+  },
+  {
+    name:"Mercedes S-Class",
+    brand:"Mercedes",
+    year:2024,
+    engine:"3.0L Turbo",
+    price:6.8,
+    displayPrice:"6,800,000 جنيه",
+    label:"الفخامة",
+    image:"https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1000&q=85",
+    description:"مرسيدس S-Class، قمة الراحة والتكنولوجيا والفخامة في عالم السيارات."
+  }
+];
+
+/* عرض الكروت */
+
+const grid = document.getElementById("carsGrid");
+
+function renderCars(list) {
+  grid.innerHTML = "";
+
+  if (!list.length) {
+    grid.innerHTML = '<div class="no-results">لا توجد سيارات تطابق اختيارك.</div>';
+    return;
+  }
+
+  list.forEach((car,index) => {
+    const card = document.createElement("article");
+    card.className = "car-card reveal";
+    card.style.animationDelay = (index % 3) * .3 + "s";
+
+    card.innerHTML = `
+      <div class="car-image">
+        <img src="${car.image}" alt="${car.name}" loading="lazy">
+        <span class="car-label">${car.label}</span>
+      </div>
+      <div class="car-info">
+        <h3>${car.name}</h3>
+        <div class="car-brand">${car.brand} | موديل ${car.year}</div>
+        <div class="car-specs">
+          <span>⚙ ${car.engine}</span>
+          <span>موديل ${car.year}</span>
+        </div>
+        <div class="car-bottom">
+          <div class="car-price">${car.displayPrice}</div>
+          <button class="details-btn" type="button">التفاصيل</button>
+        </div>
+      </div>
+    `;
+
+    card.querySelector(".details-btn").addEventListener("click", () => openModal(car));
+
+    grid.appendChild(card);
+
+    if (revealObserver) revealObserver.observe(card);
+  });
+}
+
+/* الفلاتر */
+
+const brandFilter = document.getElementById("brandFilter");
+const priceFilter = document.getElementById("priceFilter");
+
+function filterCars() {
+  const brand = brandFilter.value;
+  const price = priceFilter.value;
+
+  const filtered = cars.filter(car => {
+    const brandMatch = brand === "all" || car.brand === brand;
+
+    let priceMatch = true;
+    if (price === "under5") priceMatch = car.price < 5;
+    if (price === "5to10") priceMatch = car.price >= 5 && car.price <= 10;
+    if (price === "over10") priceMatch = car.price > 10;
+
+    return brandMatch && priceMatch;
+  });
+
+  renderCars(filtered);
+}
+
+brandFilter.addEventListener("change",filterCars);
+priceFilter.addEventListener("change",filterCars);
+
+/* نافذة التفاصيل */
+
+const modal = document.getElementById("carModal");
+
+function openModal(car) {
+  document.getElementById("modalImage").src = car.image;
+  document.getElementById("modalImage").alt = car.name;
+  document.getElementById("modalTitle").textContent = car.name;
+  document.getElementById("modalDescription").textContent =
+    car.description + " السعر المعروض: " + car.displayPrice;
+
+  document.getElementById("modalWhatsapp").href =
+    whatsappLink("مرحبًا، أريد الاستفسار عن " + car.name);
+
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+document.getElementById("closeModal").addEventListener("click",closeModal);
+document.getElementById("modalCloseButton").addEventListener("click",closeModal);
+
+modal.addEventListener("click",event => {
+  if (event.target === modal) closeModal();
+});
+
+document.addEventListener("keydown",event => {
+  if (event.key === "Escape") closeModal();
+});
+
+/* واتساب */
+
+function whatsappLink(message) {
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+}
+
+document.getElementById("contactWhatsapp").href =
+  whatsappLink("مرحبًا، أريد الاستفسار عن السيارات المتاحة.");
+
+document.getElementById("floatingWhatsapp").href =
+  whatsappLink("مرحبًا، أريد التواصل معكم.");
+
+/* ظهور العناصر */
+
+let revealObserver = null;
+
+if ("IntersectionObserver" in window) {
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.1});
+
+  document.querySelectorAll(".reveal").forEach(el => {
+    revealObserver.observe(el);
+  });
+} else {
+  document.querySelectorAll(".reveal").forEach(el => {
+    el.classList.add("visible");
+  });
+}
+
+/* ==================================
+   مستشعر ميلان الهاتف - نسخة محسنة
+================================== */
+
+const motionBtn = document.getElementById("motionBtn");
+
+let motionEnabled = false;
+let motionTimeout = null;
+let motionDataReceived = false;
+let activeMotionSource = null;
+
+function resetTilt() {
+  document.querySelectorAll(".car-card").forEach(card => {
+    card.style.setProperty("--tilt-x","0deg");
+    card.style.setProperty("--tilt-y","0deg");
+  });
+}
+
+function applyTiltValues(beta, gamma) {
+  beta = Math.max(-25,Math.min(25,beta));
+  gamma = Math.max(-25,Math.min(25,gamma));
+
+  const tiltX = (beta / 25) * 10;
+  const tiltY = (gamma / 25) * 12;
+
+  document.querySelectorAll(".car-card").forEach(card => {
+    card.style.setProperty("--tilt-x",tiltX + "deg");
+    card.style.setProperty("--tilt-y",tiltY + "deg");
+  });
+}
+
+function handleOrientation(event) {
+  if (!motionEnabled || activeMotionSource === "devicemotion") return;
+
+  if (Number.isFinite(event.beta) && Number.isFinite(event.gamma)) {
+    if (!motionDataReceived) {
+      motionDataReceived = true;
+      activeMotionSource = "deviceorientation";
+      clearTimeout(motionTimeout);
+      motionBtn.textContent = "✓ المستشعر يعمل - مِل الهاتف";
+    }
+
+    applyTiltValues(event.beta,event.gamma);
+  }
+}
+
+function handleDeviceMotion(event) {
+  if (!motionEnabled || activeMotionSource === "deviceorientation") return;
+
+  const gravity = event.accelerationIncludingGravity;
+  if (!gravity || !Number.isFinite(gravity.x) ||
+      !Number.isFinite(gravity.y) || !Number.isFinite(gravity.z)) return;
+
+  if (!motionDataReceived) {
+    motionDataReceived = true;
+    activeMotionSource = "devicemotion";
+    clearTimeout(motionTimeout);
+    motionBtn.textContent = "✓ مستشعر الحركة يعمل - مِل الهاتف";
+  }
+
+  const beta = Math.atan2(gravity.y,gravity.z) * 180 / Math.PI;
+  const gamma = Math.atan2(gravity.x,gravity.z) * 180 / Math.PI;
+  applyTiltValues(beta,gamma);
+}
+
+function stopMotion() {
+  motionEnabled = false;
+  clearTimeout(motionTimeout);
+  window.removeEventListener("deviceorientation",handleOrientation,true);
+  window.removeEventListener("devicemotion",handleDeviceMotion,true);
+  motionBtn.classList.remove("active");
+  resetTilt();
+}
+
+async function enableMotion() {
+  if (motionEnabled) {
+    stopMotion();
+    motionBtn.textContent = "✦ تفعيل الحركة ثلاثية الأبعاد";
+    return;
+  }
+
+  if (!("DeviceOrientationEvent" in window) &&
+      !("DeviceMotionEvent" in window)) {
+    motionBtn.textContent = "المتصفح لا يدعم مستشعر الحركة";
+    return;
+  }
+
+  try {
+    // بعض أجهزة iPhone تحتاج طلب إذن صريح.
+    if (typeof DeviceOrientationEvent !== "undefined" &&
+        typeof DeviceOrientationEvent.requestPermission === "function") {
+      const permission = await DeviceOrientationEvent.requestPermission();
+      if (permission !== "granted") {
+        motionBtn.textContent = "لم يتم السماح بالحركة";
+        return;
+      }
+    }
+
+    if (typeof DeviceMotionEvent !== "undefined" &&
+        typeof DeviceMotionEvent.requestPermission === "function") {
+      const permission = await DeviceMotionEvent.requestPermission();
+      if (permission !== "granted") {
+        motionBtn.textContent = "لم يتم السماح بمستشعر الحركة";
+        return;
+      }
+    }
+
+    motionEnabled = true;
+    motionDataReceived = false;
+    activeMotionSource = null;
+
+    motionBtn.classList.add("active");
+    motionBtn.textContent = "جارٍ الاتصال بمستشعر الحركة...";
+
+    window.addEventListener("deviceorientation",handleOrientation,true);
+    window.addEventListener("devicemotion",handleDeviceMotion,true);
+
+    // لا نعرض نجاح التفعيل إلا بعد وصول بيانات حقيقية من الهاتف.
+    motionTimeout = setTimeout(() => {
+      if (motionEnabled && !motionDataReceived) {
+        stopMotion();
+        motionBtn.textContent = "لم تصل بيانات الحركة - راجع أذونات المستشعر";
+      }
+    },3500);
+
+  } catch(error) {
+    stopMotion();
+    motionBtn.textContent = "تعذر الوصول إلى مستشعر الحركة";
+  }
+}
+
+motionBtn.addEventListener("click",enableMotion);
+
+/* ==================================
+   حركة الماوس على الكمبيوتر
+================================== */
+
+const isTouchDevice = window.matchMedia("(hover: none)").matches;
+
+if (!isTouchDevice) {
+  grid.addEventListener("pointermove",event => {
+    if (motionEnabled) return;
+
+    const card = event.target.closest(".car-card");
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = (event.clientY - rect.top) / rect.height;
+
+    const tiltY = (x - .5) * 12;
+    const tiltX = (.5 - y) * 10;
+
+    card.style.setProperty("--tilt-x",tiltX + "deg");
+    card.style.setProperty("--tilt-y",tiltY + "deg");
+  });
+
+  grid.addEventListener("pointerleave",() => {
+    if (!motionEnabled) resetTilt();
+  },true);
+}
+
+/* تشغيل الموقع */
+
+renderCars(cars);
+</script>
+
+</body>
+</html>
